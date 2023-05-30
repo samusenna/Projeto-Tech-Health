@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/hospitais.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">
+                    close
+                </span>
+            </div>
+            <div class="logo">
+                <img src="imgs/logo-tech-health-2.png">
+            </div>
+            <a href="index.html">
+                <span class="material-icons-sharp">home</span>
+                <h3>Início</h3>
+            </a>
+            <a href="cadastroHospital.html" class="active">
+                <span class="material-icons-sharp">local_hospital</span>
+                <h3>Hospitais</h3>
+            </a>
+            <a href="maquinas.html">
+                <span class="material-icons-sharp">computer</span>
+                <h3>Máquinas</h3>
+            </a>
+            <a href="perfil.html">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>Perfil</h3>
+            </a>
+            <a href="paginaDash.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Dashboard</h3>
+            </a>
+
+            <a href="../login.html">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Logout</h3>
+            </a>
+
+
+            <!-- <a href="../login.html">
+                <div class="material-icons-sharp">logout</div>
+                <h3>Logout</h3>
+            </a> -->
+
+        </div>
+
+        <div class="content">
+            <div class="top-menu">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Olá, <b id="userName">Dillan</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <!-- <div class="profile-photo">
+                        <img src="imgs/profile-1.jpg" alt="">
+                    </div> -->
+                </div>
+            </div>
+            <div class="view">
+                <h1>Cadastrar Hospitais</h1>
+                <div class="user-box">
+                    
+                        <div class="user-item">
+                            <h3>Nome do Hospital: </h3>
+                            <input id="nome_input" type="text">
+                        </div>
+                        <div class="user-item">
+                            <h3>CNPJ: </h3>
+                            <input id="cnpj_input" type="text">
+                        </div>
+                        <div class="user-item">
+                            <h3>Endereço:</h3>
+                            <input id="endereco_input" type="text">
+                        </div>
+                        <div class="user-item">
+                            <h3>Bairro</h3>
+                            <input id="bairro_input" type="text">
+                        </div>
+                        <div class="user-item">
+                            <h3>Cidade:</h3>
+                            <input id="cidade_input" type="text">
+                        </div>
+                        <div class="user-item">
+                            <h3>UF:</h3>
+                            <select id="uf_input" name="estados-brasil">
+                                <option>--Selecionar--</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                        <div class="user-item">
+                            <button onclick="cadastrar()" class="salvar">Salvar</button>
+                        </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/cadastroHospital"></script>
+</body>
+
+</html>
+
+<script>
+
+    function cadastrar() {
+        //  aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        //Agora vá para o método fetch logo abaixo
+        var nome_HospitalVar = nome_input.value;
+        var cnpjVar = cnpj_input.value;
+        var enderecoVar = endereco_input.value;
+        var bairroVar = bairro_input.value;
+        var cidadeVar = cidade_input.value;
+        var ufVar = uf_input.value;
+
+        if (nome_HospitalVar == "" || cnpjVar == "" || enderecoVar == "" || bairroVar == "" || cidadeVar == "" || ufVar == "") {
+           // cardErro.style.display = "block"
+           // mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+
+            //     finalizarAguardar();
+            //     return false;
+        }
+        else {
+           // setInterval(sumirMensagem, 8000)
+            alert ("Hospital Cadastrado com sucesso!")
+        }
+
+
+        // Enviando o valor da nova input
+        fetch("/maq_Hosp/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nome_HospitalServer: nome_HospitalVar,
+                cnpjServer: cnpjVar,
+                enderecoServer: enderecoVar,
+                bairroServer: bairroVar,
+                cidadeServer: cidadeVar,
+                ufServer: ufVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block"
+                alert("Hospital cadastrado com sucesso!")
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
+                window.location = "login.html";
+                // limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
+</script>

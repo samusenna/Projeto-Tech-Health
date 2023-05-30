@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Tech Health</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+
+</head>
+
+<body onload="buscarInfosIndex(), buscarUsuarios()">
+    <div class="container">
+        <aside>
+
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">
+                    close
+                </span>
+            </div>
+            <div class="sidebar">
+                <div class="logo">
+                    <img src="imgs/logo-tech-health-2.png" alt="">
+                </div>
+                <a href="index.html" class="active">
+                    <span class="material-icons-sharp">home</span>
+                    <h3>Início</h3>
+                </a>
+                <a href="cadastroHospital.html">
+                    <span class="material-icons-sharp">local_hospital</span>
+                    <h3>Hospitais</h3>
+                </a>
+                <a href="maquinas.html">
+                    <span class="material-icons-sharp">computer</span>
+                    <h3>Máquinas</h3>
+                </a>
+                <a href="perfil.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Perfil</h3>
+                </a>
+                <a href="paginaDash.html">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <!-- <a href="#">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3>Pedidos</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Analytics</h3>
+                </a> -->
+                <!-- <a href="#">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3>Mensagens</h3>
+                    <span class="message-count">26</span>
+                </a> -->
+                <!-- <a href="#">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Produtos</h3>
+                </a> -->
+                <!-- <a href="historico.html">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Histórico</h3>
+                </a> -->
+
+                <!-- <a href="#">
+                    <span class="material-icons-sharp">add</span>
+                    <h3>Add Produto</h3>
+                </a> -->
+                <a href="../login.html">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+
+        <!-- MAIN -->
+        <main>
+            <h1>OVERVIEW </h1>
+            <!-- <div class="date">
+                <input type="date">
+            </div> -->
+            <div class="insights">
+
+                <div class="divzera">
+
+                    <div class="maqs">
+                        <div class="tag">
+                            <span class="material-icons-sharp">
+                                analytics
+                            </span>
+                            <h3>Máquinas cadastradas</h3>
+                        </div>
+                        <h1 id="qtd_maquinas"></h1>
+                        <small class="text-muted">No momento</small>
+                    </div>
+
+                    <div class="users">
+                        <div class="tag">
+                            <span class="material-icons-sharp">
+                                person
+                            </span>
+                            <h3>Quantidade de usuários</h3>
+                        </div>
+                        <h1 id="qtd_usuarios"></h1>
+                        <small class="text-muted">No momento</small>
+                    </div>
+                </div>
+                <!-- RENDA -->
+                <div class="ala">
+                    <div class="tag">
+                        <span class="material-icons-sharp">
+                            youtube_searched_for
+                        </span>
+                        <h3>Qntd. de alas</h3>
+                    </div>
+                    <h1 id="qtd_alas"></h1>
+                    <small class="text-muted">No momento</small>
+                </div>
+
+
+            </div>
+
+
+        </main>
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Olá, <b id="userName">!</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <!-- <div class="profile-photo">
+                        <img src="imgs/profile-1.jpg" alt="">
+                    </div> -->
+                </div>
+            </div>
+            <!-- <div class="recent-updates">
+                <h2>Novas atualizações</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="imgs/profile-2.jpg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Quentin Tarantino</b> está com sobrecarga no uso da CPU.</p>
+                            <small class="text-muted">há 2m atrás</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="imgs/profile-4.jpg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Samantha Muller</b> estabilizou o uso de CPU para 80%</p>
+                            <small class="text-muted">há 10m atrás</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="imgs/user-profile-3.png" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Michael Scott</b> está com a máquina offline.</p>
+                            <small class="text-muted">há 33m atrás</small>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+        </div>
+    </div>
+
+    <script src="../js/index.js"></script>
+</body>
+
+</html>
+
+<script>
+
+    function buscarInfosIndex() {
+        fetch(`/buscar/buscarInfoMaquina`).then(resposta => {
+            if (resposta.ok) {
+                resposta.json().then(function (res) {
+                    var qtd_alas = document.getElementById('qtd_alas');
+                    var qtd_maquinas = document.getElementById('qtd_maquinas');
+                    
+                    qtd_alas.innerHTML = res[0].alas;
+                    qtd_maquinas.innerHTML = res[0].contagemMaq;
+                })
+
+            } else {
+
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+
+
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+            });
+    }
+    
+
+    function buscarUsuarios() {
+
+        fetch(`/buscar/buscarUsuarios`).then(resposta => {
+            if (resposta.ok) {
+                resposta.json().then(function (res) {
+                    var qtd_usuarios = document.getElementById('qtd_usuarios');
+                    console.log(qtd_usuarios);
+                    qtd_usuarios.innerHTML = res[0].contagemUsuarios;
+
+
+                })
+
+            } else {
+
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+
+
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+            });
+    }
+
+
+</script>

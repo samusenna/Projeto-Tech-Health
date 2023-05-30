@@ -1,0 +1,89 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/rmsouza/.m2/repository/com/github/britooo/looca-api/2.0.0/looca-api-2.0.0.jar;C:/Users/rmsouza/.m2/repository/com/github/oshi/oshi-core/6.1.5/oshi-core-6.1.5.jar;C:/Users/rmsouza/.m2/repository/net/java/dev/jna/jna/5.10.0/jna-5.10.0.jar;C:/Users/rmsouza/.m2/repository/net/java/dev/jna/jna-platform/5.10.0/jna-platform-5.10.0.jar;C:/Users/rmsouza/.m2/repository/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar;C:/Users/rmsouza/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar;C:/Users/rmsouza/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:/Users/rmsouza/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar;C:/Users/rmsouza/.m2/repository/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar;C:/Users/rmsouza/.m2/repository/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar;C:/Users/rmsouza/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar;C:/Users/rmsouza/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar;C:/Users/rmsouza/.m2/repository/org/slf4j/slf4j-simple/1.7.30/slf4j-simple-1.7.30.jar;C:/Users/rmsouza/.m2/repository/org/springframework/spring-jdbc/5.0.5.RELEASE/spring-jdbc-5.0.5.RELEASE.jar;C:/Users/rmsouza/.m2/repository/org/springframework/spring-beans/5.0.5.RELEASE/spring-beans-5.0.5.RELEASE.jar;C:/Users/rmsouza/.m2/repository/org/springframework/spring-core/5.0.5.RELEASE/spring-core-5.0.5.RELEASE.jar;C:/Users/rmsouza/.m2/repository/org/springframework/spring-jcl/5.0.5.RELEASE/spring-jcl-5.0.5.RELEASE.jar;C:/Users/rmsouza/.m2/repository/org/springframework/spring-tx/5.0.5.RELEASE/spring-tx-5.0.5.RELEASE.jar;C:/Users/rmsouza/.m2/repository/org/apache/commons/commons-dbcp2/2.5.0/commons-dbcp2-2.5.0.jar;C:/Users/rmsouza/.m2/repository/org/apache/commons/commons-pool2/2.6.0/commons-pool2-2.6.0.jar;C:/Users/rmsouza/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar;C:/Users/rmsouza/.m2/repository/com/h2database/h2/1.4.199/h2-1.4.199.jar;C:/Users/rmsouza/.m2/repository/mysql/mysql-connector-java/8.0.22/mysql-connector-java-8.0.22.jar;C:/Users/rmsouza/.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar;C:/Users/rmsouza/.m2/repository/com/microsoft/sqlserver/mssql-jdbc/7.2.2.jre11/mssql-jdbc-7.2.2.jre11.jar;C:/Users/rmsouza/.m2/repository/org/json/json/20220924/json-20220924.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'tech-health-api-java 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' 'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'tech-health-api-java 1.0-SNAPSHOT API'
+Medidas
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/Ala.java'
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/Computador.java'
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/ConexaoDocker.java'
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/ConexaoTechHealth.java'
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/Funcionario.java'
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/Hospital.java'
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/LoginSwing.java'
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/MainComputador.java'
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/Medida.java'
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/Slack.java'
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/TelaInfMaquina.java'
+'C:/Users/rmsouza/OneDrive - Grupo VR/Documentos/NetBeansProjects/tech-health-api-java/src/main/java/Medidas/TelaMedidasMaquina.java'
+C:\Users\rmsouza\.m2\repository\com\github\britooo\looca-api\2.0.0\looca-api-2.0.0.jar = 1665501843785
+C:\Users\rmsouza\.m2\repository\com\github\oshi\oshi-core\6.1.5\oshi-core-6.1.5.jar = 1664496953843
+C:\Users\rmsouza\.m2\repository\net\java\dev\jna\jna\5.10.0\jna-5.10.0.jar = 1664496955884
+C:\Users\rmsouza\.m2\repository\net\java\dev\jna\jna-platform\5.10.0\jna-platform-5.10.0.jar = 1664496955052
+C:\Users\rmsouza\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar = 1665501847658
+C:\Users\rmsouza\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar = 1665501844041
+C:\Users\rmsouza\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1665501844041
+C:\Users\rmsouza\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar = 1665501844089
+C:\Users\rmsouza\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar = 1665501844554
+C:\Users\rmsouza\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar = 1665501844346
+C:\Users\rmsouza\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar = 1665501844362
+C:\Users\rmsouza\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar = 1664496950909
+C:\Users\rmsouza\.m2\repository\org\slf4j\slf4j-simple\1.7.30\slf4j-simple-1.7.30.jar = 1664496950721
+C:\Users\rmsouza\.m2\repository\org\springframework\spring-jdbc\5.0.5.RELEASE\spring-jdbc-5.0.5.RELEASE.jar = 1664918006764
+C:\Users\rmsouza\.m2\repository\org\springframework\spring-beans\5.0.5.RELEASE\spring-beans-5.0.5.RELEASE.jar = 1664918007281
+C:\Users\rmsouza\.m2\repository\org\springframework\spring-core\5.0.5.RELEASE\spring-core-5.0.5.RELEASE.jar = 1664918009118
+C:\Users\rmsouza\.m2\repository\org\springframework\spring-jcl\5.0.5.RELEASE\spring-jcl-5.0.5.RELEASE.jar = 1664918004395
+C:\Users\rmsouza\.m2\repository\org\springframework\spring-tx\5.0.5.RELEASE\spring-tx-5.0.5.RELEASE.jar = 1664918005760
+C:\Users\rmsouza\.m2\repository\org\apache\commons\commons-dbcp2\2.5.0\commons-dbcp2-2.5.0.jar = 1664918006262
+C:\Users\rmsouza\.m2\repository\org\apache\commons\commons-pool2\2.6.0\commons-pool2-2.6.0.jar = 1664918007266
+C:\Users\rmsouza\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar = 1664918007266
+C:\Users\rmsouza\.m2\repository\com\h2database\h2\1.4.199\h2-1.4.199.jar = 1664918015068
+C:\Users\rmsouza\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar = 1665002567092
+C:\Users\rmsouza\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar = 1665002566149
+C:\Users\rmsouza\.m2\repository\com\microsoft\sqlserver\mssql-jdbc\7.2.2.jre11\mssql-jdbc-7.2.2.jre11.jar = 1665943143699
+C:\Users\rmsouza\.m2\repository\org\json\json\20220924\json-20220924.jar = 1668023292032
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\src\main\java = 1668827849558
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\allclasses-index.html = 1669838878721
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\allclasses.html = 1669838878736
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\allpackages-index.html = 1669838878736
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\constant-values.html = 1669838878611
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\deprecated-list.html = 1669838878736
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\element-list = 1669838878580
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\help-doc.html = 1669838878752
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\index-all.html = 1669838878721
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\index.html = 1669838878736
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\member-search-index.js = 1669838878721
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\member-search-index.zip = 1669838878721
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\overview-tree.html = 1669838878674
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\package-search-index.js = 1669838878705
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\package-search-index.zip = 1669838878705
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\script.js = 1669838878768
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\search.js = 1669838878768
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\serialized-form.html = 1669838878626
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\stylesheet.css = 1669838878752
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\type-search-index.js = 1669838878705
+C:\Users\rmsouza\OneDrive - Grupo VR\Documentos\NetBeansProjects\tech-health-api-java\target\apidocs\type-search-index.zip = 1669838878705

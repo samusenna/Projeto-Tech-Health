@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máquinas</title>
+    <script src="./js/funcoes.js"></script>
+    <link rel="stylesheet" href="maquinas.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+</head>
+<!--  -->
+
+<body onload="mostrarInfo(idMaquina)">
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="imgs/logo-tech-health-2.png">
+            </div>
+            <a href="index.html">
+                <span class="material-icons-sharp">home</span>
+                <h3>Início</h3>
+            </a>
+            <a href="cadastroHospital.html">
+                <span class="material-icons-sharp">local_hospital</span>
+                <h3>Hospitais</h3>
+            </a>
+            <a href="maquinas.html" class="active">
+                <span class="material-icons-sharp">computer</span>
+                <h3>Máquinas</h3>
+            </a>
+            <a href="perfil.html">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>Perfil</h3>
+            </a>
+            <a href="paginaDash.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Dashboard</h3>
+            </a>
+
+
+            <a href="../login.html">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Logout</h3>
+            </a>
+
+        </div>
+        <div class="content">
+            <div class="top-menu">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Olá, <b id="userName">User</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <!-- <div class="profile-photo">
+                        <img src="imgs/profile-1.jpg" alt="">
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="view">
+
+                <div class="modal-container">
+
+                    <div class="adc-maq">
+                        <h2>Adicionar nova máquina</h2>
+                        <span>Insira a ala do Hospital:</span>
+                        <input id="ala_input" type="text" placeholder="Ala do hospital">
+                        <div class="buttons">
+                            <button id="btn-confirma" onclick="confirma()">Adicionar</button>
+                            <button id="btn-cancelar" onclick="cancela()">Cancelar</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h1>Suas máquinas</h1>
+
+                <div class="div-maquinas">
+                    <div class="botoes">
+                        <button id="btn-add" onclick="add()">Adicionar máquina</button>
+                        <!-- <button id="btn-delete" onclick="deletar()">Remover máquina</button> -->
+                    </div>
+
+                    <!-- <div class="remove-maq">
+                        <h1>Tem certeza?</h1>
+                        <div class="buttons">
+                            <button id="bt_sim" onclick="remove()">Sim</button>
+                            <button id="bt_nao" onclick="naoremove()">Não</button>
+                        </div>
+                    </div> -->
+
+                    <div class="maquinas">
+                        <div class="maquina">
+                            <div class="img">
+                                <img src="imgs/desktop-icon.png" alt="">
+                            </div>
+                            <div class="info">
+                                <span>ID: <span id="idMaq"></span></span>
+                                <span>Tamanho da Memória: <span id="tamMemoria"></span>GB</span>
+                                <span>Sistema Operacional: <span id="soMaq"></span></span>
+                                <span>Tamanho do Disco: <span id="tamDisco"></span>GB</span>
+
+                            </div>
+                            <div class="ala">Ala:
+                                <span id="alaHospital"></span>
+                            </div>
+                            <div class="status">
+                                
+                                <span id="status2" style="display: none;">Ativo</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="../js/maquinas.js"></script>
+
+</body>
+
+</html>
+<script>
+
+    //window.onload = mostrarInfo(1);
+
+
+    function add() {
+        const modal = document.querySelector(".adc-maq")
+        modal.style.display = 'block'
+    }
+
+    function confirma() {
+        var ala_HospitalarVar = ala_input.value;
+        console.log(ala_HospitalarVar);
+
+        fetch("/maq_Hosp/confirma", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                ala_HospitalarServer: ala_HospitalarVar,
+
+
+            })
+            // console.log();
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
+                window.location = "login.html";
+                status2.style.display = 'block';
+                status.style.display = 'none';
+                // limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        //  return false;
+
+        const modal = document.querySelector(".adc-maq")
+        modal.style.display = 'none'
+        alert("Máquina cadastrada com sucesso")
+        location.reload();
+
+        //window.onload = mostrarInfo(1);
+
+
+    }
+
+    function cancela() {
+        const modal = document.querySelector(".adc-maq")
+        modal.style.display = 'none'
+    }
+
+    function deletar() {
+        const remover = document.querySelector(".remove-maq")
+        remover.style.display = 'block'
+    }
+
+
+    // function remove(idMaquina) {
+    //     console.log("Criar função de apagar Maquina escolhida - ID" + idMaquina);
+    //     fetch(`/maq_Hosp/remove/${idMaquina}`, {
+    //         method: "DELETE",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         }
+    //     }).then(function (resposta) {
+
+    //         if (resposta.ok) {
+    //             window.alert("Maquina deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+    //             window.location = "../dashboard/maquinas.html"
+    //             alert("A máquina foi excluída com sucesso!")
+    //             location.reload();
+    //         } else if (resposta.status == 404) {
+    //             window.alert("Deu 404!");
+    //         } else {
+    //             throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+    //         }
+    //     }).catch(function (resposta) {
+    //         console.log(`#ERRO: ${resposta}`);
+    //     });
+    // }
+
+
+    function mostrarInfo(idMaquina) {
+
+        fetch(`/maq_Hosp/mostrarInfoMaq/${idMaquina}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    var idMaq = document.getElementById('idMaq');
+                    var tamMemoria = document.getElementById('tamMemoria');
+                    var tamDisco = document.getElementById('tamDisco');
+                    var alaHospital = document.getElementById('alaHospital');
+                    var soMaq = document.getElementById('soMaq');
+
+                    idMaq.innerHTML = resposta[0].id;
+                    tamMemoria.innerHTML = resposta[0].totalMemoria;
+                    tamDisco.innerHTML = resposta[0].totalDisco;
+                    alaHospital.innerHTML = resposta[0].ala;
+                    soMaq.innerHTML = resposta[0].so;
+                    
+                    status2.style.display = 'block'
+                    
+
+
+                })
+
+            } else {
+
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function naoremove(){
+        const naoR = document.querySelector(".remove-maq")
+        naoR.style.display = 'none'
+    }
+
+
+
+</script>

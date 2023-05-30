@@ -1,0 +1,32 @@
+2022-10-05 19:52:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE USUARIO (ID INT PRIMARY KEY AUTO_INCREMENT,EMAIL VARCHAR(255),CNPJ VARCHAR(255)SENHA[*] VARCHAR(255)) "; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE usuario (id INT PRIMARY KEY AUTO_INCREMENT,email VARCHAR(255),cnpj VARCHAR(255)senha VARCHAR(255)) [42001-199]
+2022-10-05 19:52:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POKEMON" not found; SQL statement:
+INSERT INTO pokemon VALUES (?, ?, ?) [42102-199]
+2022-10-05 19:53:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO usuario VALUES (?, ?, ?) [21002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:314)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at org.apache.commons.dbcp2.DelegatingConnection.prepareStatement(DelegatingConnection.java:292)
+	at org.apache.commons.dbcp2.DelegatingConnection.prepareStatement(DelegatingConnection.java:292)
+	at org.springframework.jdbc.core.JdbcTemplate$SimplePreparedStatementCreator.createPreparedStatement(JdbcTemplate.java:1515)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:603)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:850)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:905)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:915)
+	at TesteMain.main(TesteMain.java:42)
+2022-10-05 20:00:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POKEMON" not found; SQL statement:
+SELECT email, senha FROM pokemon [42102-199]

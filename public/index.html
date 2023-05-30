@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/header.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="logo">
+        <img onclick="home()" src="img/logo.png">
+        <h2 onclick="home()">Tech Health</h2>
+      </div>
+      <div class="opcoes">
+        <div class="men" id="menu1">
+          <a href="#produto">Produto</a>
+          <a href="#sobreNos">Sobre nós</a>
+          <a href="login.html">Login</a>
+          <a href="cadastro.html">Cadastro</a>
+        </div>
+
+        <img src="img/menu.jpg" id="menu" onclick="mostrar()">
+        <a href="#produto">Produto</a>
+        <a href="#sobreNos">Sobre nós</a>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="container" id="cont1">
+      <div class="imagem">
+        <img src="img/logo.png">
+      </div>
+      <div class="texto">
+        <h1>Tech Health</h1>
+        <p>
+          A empresa número 1 em monitoramento de componentes.
+          <br>
+          Junte-se a nós também!
+        </p>
+        <a href="cadastro.html">Cadastrar-se</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divisor"></hr>
+
+  <div class="banner">
+    <div class="container">
+      <div class="right" id="produto">
+        <h1>Produto</h1>
+        <p>Com nosso software você tem uma maior estabilidade de máquinas, 
+          uma recepção mais leve e rápida no atendimento e maior satisfação dos seus pacientes. 
+          Tudo pode ser consultado através das dashboards.
+        </p>
+      </div>
+      <div class="left">
+        <img src="img/pc.png">
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divisor"></hr>
+
+  <div class="banner">
+    <div class="container">
+      <div class="left">
+        <img src="img/boneco.png">
+      </div>
+      <div class="right" id="sobreNos">
+        <h1>Sobre nós</h1>
+        <p>Somos uma empresa focada no ramo da tecnologia, empenhada em trazer 
+          resultados positivos na interatividade entre o setor e usuário final, 
+          através do monitoramento de hardwares das finalidades.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divisor"></hr>
+
+  <div class="footer">
+    <div class="container">
+      <div class="info">
+        <h4>Endereço</h4>
+        <p>Endereço: Rua Haddock Lobo, 595 - 
+          <br>
+          Cerqueira César, São Paulo - SP, 01414-001</p>
+      </div>
+      <div class="info">
+        <h4>Contato</h4>
+        <p>Tel.: 9999-9999
+          <br>
+          contato@techhealth.com
+        </p>
+      </div>
+      <div class="info">
+        <h4>Suporte</h4>
+        <p><a href="https://painel.tomticket.com/painel.html#!/">Ferramenta de suporte</a></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

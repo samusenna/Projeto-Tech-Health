@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tech Health</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" href="img/a21dd8b6-91d9-4c1f-ad7a-267d6b9e601b.jpg">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="./js/funcoes.js"></script>
+
+
+</head>
+<body>
+    <div class="container">
+        <a href="index.html"><i class='bx bx-arrow-back'></i></a>
+        <div class="box" id="box">
+            <div class="left" id="left">
+
+                <h2>Login</h2>
+                
+                <form>
+
+                    
+                    <label>
+                        <input type="email" placeholder="E-mail" id="email_input">
+                    </label>
+                    <label>
+                        <input type="password" placeholder="Senha" id="senha_input">
+                    </label>
+                    
+                    
+                    
+                </form>     
+
+                <button onclick="entrar()">Entrar</button>
+                <p class="signup">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p> 
+                
+            </div>
+            
+            <div class="right" id="right">
+                <img src="img/pexels-karolina-grabowska-4386467.jpg" alt="">
+            </div>
+
+        </div>
+
+        <div id="div_aguardar" class="loading-div">
+            <img src="css/assets/circle-loading.gif" id="loading-gif">
+        </div>
+
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div id="div_erros_login">
+
+        </div>
+        <span id="mostrar"></span>
+
+
+    </div>
+</body>
+</html>
+
+<script>
+
+function entrar() {
+    aguardar();
+
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+
+    // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+    if (emailVar == "" || senhaVar == "") {
+        cardErro.style.display = "block"
+        mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+        finalizarAguardar();
+        return false;
+    }
+    else {
+        setInterval(sumirMensagem, 5000)
+    }
+
+    if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+        cardErro.style.display = "block"
+        mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
+        finalizarAguardar();
+        return false;
+    }
+    else {
+        setInterval(sumirMensagem, 5000)
+    }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+
+                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.ID_USUARIO = json.id;
+                sessionStorage.HOSPITAL_USUARIO = json.permissao;
+
+                setTimeout(function () {
+                    window.location = "dashboard/index.html"; // pra qual pagina ir apos o login
+                }, 1000); // apenas para exibir o loading
+
+            });
+
+        } else {
+
+            console.log("Houve um erro ao tentar realizar o login!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+                finalizarAguardar(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}
+
+function sumirMensagem() {
+    cardErro.style.display = "none"
+}
+
+</script>

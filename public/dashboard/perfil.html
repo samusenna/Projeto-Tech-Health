@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/perfil.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+</head>
+
+<body onload="mostrarHospital()">
+    <div class="container">
+        <div class="sidebar">
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">
+                    close
+                </span>
+            </div>
+            <div class="logo">
+                <img src="imgs/logo-tech-health-2.png" alt="">
+            </div>
+            <a href="index.html" >
+                <span class="material-icons-sharp">home</span>
+                <h3>Início</h3>
+            </a>
+            <a href="cadastroHospital.html">
+                <span class="material-icons-sharp">local_hospital</span>
+                <h3>Hospitais</h3>
+            </a>
+            <a href="maquinas.html">
+                <span class="material-icons-sharp">computer</span>
+                <h3>Máquinas</h3>
+            </a>
+            <a href="#" class="active">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>Perfil</h3>
+            </a>
+            <a href="paginaDash.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Dashboard</h3>
+            </a>
+            
+            <a href="../login.html">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Logout</h3>
+            </a>
+        </div>
+        <div class="content">
+            <div class="top-menu">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Olá, <b id="userName">Dillan</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <!-- <div class="profile-photo">
+                        <img src="imgs/profile-1.jpg" alt="">
+                    </div> -->
+                </div>
+            </div>
+            <div class="view">
+                <h1>Perfil</h1>
+                <div class="user-box">
+                    <div class="left">
+                        <div class="user-item">
+                            <h3>Nome: </h3>
+                            <span id="perfilName">|</span>
+                        </div>
+                        <div class="user-item">
+                            <h3>Email: </h3>
+                            <span id="perfilEmail">|</span>
+                        </div>
+                        <div class="user-item">
+                            <h3>Hospital: </h3>
+                            <span id="idHospital"></span>
+                        </div>
+                        <div class="user-item">
+                            <h3>ID da máquina: </h3>
+                            <span id="idMaq"></span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="user-img">
+                            <img src="../img/user-img.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/perfil.js"></script>
+</body>
+
+</html>
+
+<script>
+
+    function mostrarHospital() {
+        fetch(`/buscar/buscarInfoHospital`).then(resposta => {
+            if (resposta.ok) {
+                resposta.json().then(function (res) {
+                    var nomeHospital = document.getElementById('nomeHospital');
+                    idHospital.innerHTML = res[0].nome_Hospital;
+
+                    console.log(nome_Hospital);                    
+
+                    var idMaqui = document.getElementById('idMaqui');
+                    idMaq.innerHTML =  res[0].idMaq;
+                    console.log(idMaq);
+                })
+
+            } else {
+
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+
+
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+            });
+    }
+
+</script>
